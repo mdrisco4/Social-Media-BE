@@ -7,4 +7,4 @@ const router = express.Router();
 router.get('/', getPosts);
 router.get('/', createPost);
 
-export default router
+export default router;
