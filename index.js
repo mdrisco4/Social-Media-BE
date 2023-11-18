@@ -6,26 +6,12 @@ import cors from 'cors';
 import postRoutes from './routes/posts.js'
 
 const app = express();
-// const favicon = require('serve-favicon');
 
-// function ignoreFavicon(req, res, next) {
-//     if (req.CONNECTION_URL.includes('favicon.ico')) {
-//         res.writeHead(200, {'Content-Type': 'image/x-icon'} );
-//         res.end("favicon not sought")
-//       console.log("favicon not sought")
-//     }
-//     next();
-//   }
-
-// app.use(ignoreFavicon);
 
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-// app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use('/posts', postRoutes)
 
